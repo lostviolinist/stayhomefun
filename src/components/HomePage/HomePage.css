@@ -1,0 +1,25 @@
+.hashtag {
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+.desc {
+    font-size: 20px;
+    text-align: center;
+}
+
+.category {
+    margin-top: 8em;
+}
+
+h4{
+    color: #FF7E73;
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: 0.5px 0.5px 0.5px 0.5px  grey;
+    border-top: black;
+    
+}

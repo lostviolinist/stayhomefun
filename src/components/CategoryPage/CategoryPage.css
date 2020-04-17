@@ -1,0 +1,15 @@
+.title{
+    margin-left: 0px;
+}
+
+
+.card{
+    width: 18rem;
+    margin-top: 3em;
+}
+
+.btn {
+    background-color: coral;
+    color:white;
+    float: right;
+}
