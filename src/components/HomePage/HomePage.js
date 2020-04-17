@@ -16,7 +16,8 @@ const HomePage = props => (
     </div>
 
     <div className="category">
-        <div class="card">
+        
+        <div class="card ">
             
             <div class="card-body">
                 <h4 class="card-title">
@@ -28,7 +29,8 @@ const HomePage = props => (
                 
             </div>
         </div>
-    </div>
+        </div>
+    
     </>
 
 );

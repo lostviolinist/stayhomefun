@@ -17,3 +17,8 @@ h4{
     color: #FF7E73;
     font-weight: bold;
 }
+
+.card {
+    box-shadow: 1px 1px 1px grey;
+    border: none;
+}
