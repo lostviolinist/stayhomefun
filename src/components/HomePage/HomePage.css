@@ -19,6 +19,7 @@ h4{
 }
 
 .card {
-    box-shadow: 1px 1px 1px grey;
-    border: none;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px  grey;
+    border-top: black;
+    
 }
