@@ -8,6 +8,7 @@ import './App.css';
 import Toolbar from './components/Toolbar/Toolbar'
 import HomePage from './components/HomePage/HomePage'
 import CategoryPage from './components/CategoryPage/CategoryPage'
+import Footer from './components/Footer/Footer'
 
 class App extends Component {
   render() {
@@ -21,6 +22,9 @@ class App extends Component {
       <Route path="/category" component={CategoryPage} exact />
           
       </div>
+      <footer className="">
+              <Footer />
+          </footer>
       </Router>
     )
   }

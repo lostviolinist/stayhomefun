@@ -21,5 +21,28 @@ h4{
 .card {
     box-shadow: 0.5px 0.5px 0.5px 0.5px  grey;
     border-top: black;
+    margin-bottom: 4em;
     
+}
+.fb{
+    margin-bottom: 5em;
+    text-align: center;
+    
+}
+.facebook {
+    width:500px; 
+    height:500px; 
+    border:none;
+    
+    overflow: hidden;
+}
+
+.google{
+    margin-bottom: 5em;
+    text-align: center;
+}
+
+.googleforms{
+    width:640px;
+    height:1100px;
 }
