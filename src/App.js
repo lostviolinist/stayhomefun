@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -23,63 +23,55 @@ const firebaseConfig = {
 };
 
 class App extends Component {
-  initializeFirebase = () => {
-    if (!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig);
-    }
+  constructor(props) {
+    super(props);
+    // every object stored in the following arrays have the 'title', 'desc', 'link' attributes
+    // e.g. retrieve news title by doing this.state.news[0].title
+    this.state = {
+      news: [],
+      health: [],
+      groceries: [],
+      food: [],
+      learning: [],
+      entertainment: []
+    };
   }
 
   componentDidMount() {
-    // firebase.database().ref('/news/').set([
-    //   {
-    //     title: "coronatracker",
-    //     desc: "Track cases around the world",
-    //     link : "https://www.coronatracker.com/"
-    //   },
-    //   {
-    //     title: "worldmeters",
-    //     desc: "Visualization around the world",
-    //     link : "https://www.worldometers.info/coronavirus/"
-    //   },
-    //   {
-    //     title: "WHO",
-    //     desc: "Get news from verified sources...not WhatsApp University 2020",
-    //     link : "https://www.who.int/"
-    //   }
-    // ]);
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
 
-    // firebase.database().ref('health/').set()
+    let categories = [this.state.news, this.state.health, this.state.groceries, this.state.food, this.state.learning, this.state.entertainment]
+    let category_string = ["news", "health", "groceries", "food", "learning", "entertainment"]
 
-    firebase.database().ref('/news/').once('value').then(function(snapshot) {
-      snapshot.forEach(function(childSnapshot) {
-        console.log(childSnapshot.val());
+    category_string.forEach((category, index) => {
+      firebase.database().ref(category).once('value').then((snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+          categories[index].push(childSnapshot.val());
+        })
       })
     })
   }
 
-
   render() {
-    this.initializeFirebase();
     return (
+
       <Router>
-      <header className="nav">
-              <Toolbar /> 
-      </header>
-      <div className="App container">
-      <Route path="/" component={HomePage} exact />
-      <Route path="/category" component={CategoryPage} exact />
-          
-      </div>
-      <footer className="">
-              <Footer />
-          </footer>
+        <header className="nav">
+          <Toolbar />
+        </header>
+        <div className="App container">
+          <Route path="/" component={HomePage} exact />
+          <Route path="/category" component={CategoryPage} exact />
+
+        </div>
+        <footer className="">
+          <Footer />
+        </footer>
       </Router>
     )
   }
-
-  
-
-
 }
 
 export default App;
