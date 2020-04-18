@@ -12,7 +12,7 @@ const CategoryPage = props => (
         <div class="resources">
             <div class="row">
                 <div class="col-sm">
-                    <div class="card">
+                    <div class="card res">
                         <div class="card-body">
                             <h5 class="card-title">WHO</h5>
                             <p class="card-text">Official news from the WHO</p>
@@ -22,7 +22,7 @@ const CategoryPage = props => (
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="card">
+                    <div class="card res">
                         <div class="card-body">
                             <h5 class="card-title">WHO</h5>
                             <p class="card-text">Official news from the WHO</p>
@@ -32,7 +32,7 @@ const CategoryPage = props => (
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="card">
+                    <div class="card res">
                         <div class="card-body">
                             <h5 class="card-title">WHO</h5>
                             <p class="card-text">Official news from the WHO</p>
@@ -42,7 +42,7 @@ const CategoryPage = props => (
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="card">
+                    <div class="card res">
                         <div class="card-body">
                             <h5 class="card-title">WHO</h5>
                             <p class="card-text">Official news from the WHO</p>
@@ -52,7 +52,7 @@ const CategoryPage = props => (
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="card">
+                    <div class="card res">
                         <div class="card-body">
                             <h5 class="card-title">WHO</h5>
                             <p class="card-text">Official news from the WHO</p>
@@ -62,7 +62,7 @@ const CategoryPage = props => (
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="card">
+                    <div class="card res">
                         <div class="card-body">
                             <h5 class="card-title">WHO</h5>
                             <p class="card-text">Official news from the WHO</p>

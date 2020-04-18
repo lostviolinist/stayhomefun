@@ -9,6 +9,7 @@ import Toolbar from './components/Toolbar/Toolbar'
 import HomePage from './components/HomePage/HomePage'
 import CategoryPage from './components/CategoryPage/CategoryPage'
 import firebase from 'firebase';
+import Footer from './components/Footer/Footer'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDzVmfz8rRKuC2MxwxmYRUyQ7pH3vAU0_4",
@@ -69,6 +70,9 @@ class App extends Component {
       <Route path="/category" component={CategoryPage} exact />
           
       </div>
+      <footer className="">
+              <Footer />
+          </footer>
       </Router>
     )
   }
