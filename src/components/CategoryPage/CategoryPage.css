@@ -3,10 +3,18 @@
 }
 
 
-.res{
-    width: 18rem;
-    margin-top: 3em;
+h1{
+    font-weight: bolder;
+    margin-bottom: 1em;
 }
+
+.res{
+    width:100%;
+    
+    float: right;
+    
+}
+
 
 .btn {
     background-color: coral;

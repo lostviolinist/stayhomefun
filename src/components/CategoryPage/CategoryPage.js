@@ -1,79 +1,55 @@
 import React from 'react';
 import './CategoryPage.css'
+import {useFirebase} from '../../firebase';
 
-const CategoryPage = props => (
+const CategoryPage = props => {
+    
+    const firebase = useFirebase()
+    console.log();
+
+    const [articles, setArticles] = React.useState([])
+    console.log({articles});
+    React.useEffect(()=>{
+        firebase
+        .getCategoryArticles(props.category)
+        .then(val=> {
+            setArticles(val)
+            console.log('sdss')
+            console.log(val)})
+    },[props.category, firebase])
+
+    return (
     <>
-
+        
 
         <div class="title">
-            <h2>News</h2>
+            <h1>{props.category}</h1>
         </div>
-
-        <div class="resources">
-            <div class="row">
-                <div class="col-sm">
+<div class="container">
+        <div class="resources"> {
+      
+        articles.map((resource, index) => {
+            
+    return (
+        
+            <div class="row mb5"  >
+                <div class="col-sm" key={index}>
                     <div class="card res">
                         <div class="card-body">
-                            <h5 class="card-title">WHO</h5>
-                            <p class="card-text">Official news from the WHO</p>
-                            <a href="https://www.who.int/" class="btn ">Take me there</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card res">
-                        <div class="card-body">
-                            <h5 class="card-title">WHO</h5>
-                            <p class="card-text">Official news from the WHO</p>
-                            <a href="https://www.who.int/" class="btn ">Take me there</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card res">
-                        <div class="card-body">
-                            <h5 class="card-title">WHO</h5>
-                            <p class="card-text">Official news from the WHO</p>
-                            <a href="https://www.who.int/" class="btn ">Take me there</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card res">
-                        <div class="card-body">
-                            <h5 class="card-title">WHO</h5>
-                            <p class="card-text">Official news from the WHO</p>
-                            <a href="https://www.who.int/" class="btn ">Take me there</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card res">
-                        <div class="card-body">
-                            <h5 class="card-title">WHO</h5>
-                            <p class="card-text">Official news from the WHO</p>
-                            <a href="https://www.who.int/" class="btn ">Take me there</a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card res">
-                        <div class="card-body">
-                            <h5 class="card-title">WHO</h5>
-                            <p class="card-text">Official news from the WHO</p>
-                            <a href="https://www.who.int/" class="btn ">Take me there</a>
-
+                            <h5 class="card-title">{resource.title}</h5>
+                            <p class="card-text">{resource.desc}</p>
+                            <a href={resource.link} class="btn ">Take me there</a>
                         </div>
                     </div>
                 </div>
             </div>
-
+            
+    )
+        })
+    }
+        </div>
         </div>
     </>
-);
-export default CategoryPage;
+    )};
+
+    export default CategoryPage;

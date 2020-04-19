@@ -8,65 +8,64 @@ import './App.css';
 import Toolbar from './components/Toolbar/Toolbar'
 import HomePage from './components/HomePage/HomePage'
 import CategoryPage from './components/CategoryPage/CategoryPage'
-import firebase from 'firebase';
+
 import Footer from './components/Footer/Footer'
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDzVmfz8rRKuC2MxwxmYRUyQ7pH3vAU0_4",
-  authDomain: "stayhomefun-698b6.firebaseapp.com",
-  databaseURL: "https://stayhomefun-698b6.firebaseio.com",
-  projectId: "stayhomefun-698b6",
-  storageBucket: "stayhomefun-698b6.appspot.com",
-  messagingSenderId: "573258055182",
-  appId: "1:573258055182:web:99f68c90f4b389fbe7865f",
-  measurementId: "G-35TRCM7NLQ"
-};
+// https://github.com/malcolm-kee/the-forum
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    // every object stored in the following arrays have the 'title', 'desc', 'link' attributes
-    // e.g. retrieve news title by doing this.state.news[0].title
-    this.state = {
-      news: [],
-      health: [],
-      groceries: [],
-      food: [],
-      learning: [],
-      entertainment: []
-    };
-  }
 
-  componentDidMount() {
-    if (!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig);
+
+/* {
+  "metadata": {
+    "entertainment": {
+      "desc" : "May cause too many wasted hours on the Internet, proceed with caution "
+    }
+  },
+  "data": {
+    "entertainment" : {
+      "-M5CidpheAnSlB3eiHf5" : {
+        "desc" : "Group video chat for friends",
+        "link" : "https://houseparty.com/",
+        "title" : "HouseParty"
+      }, 
     }
 
-    let categories = [this.state.news, this.state.health, this.state.groceries, this.state.food, this.state.learning, this.state.entertainment]
-    let category_string = ["news", "health", "groceries", "food", "learning", "entertainment"]
+    {
+  "value": {
+    "history": "{action: \"POP\", block: ƒ block() {}, createHref: ƒ …}",
+    "location": "{hash: \"\", pathname: \"/category/news\", search: \"\", …}",
+    "match": null
+  },
+  "children": null
 
-    category_string.forEach((category, index) => {
-      firebase.database().ref(category).once('value').then((snapshot) => {
-        snapshot.forEach((childSnapshot) => {
-          categories[index].push(childSnapshot.val());
-        })
-      })
-    })
-  }
+  'http://localhost:3000/category/news'
+
+  match:
+path: "/category/:routeId"
+url: "/category/news"
+isExact: true
+}
+*/
+
+class App extends Component {
+
 
   render() {
     return (
-
       <Router>
         <header className="nav">
           <Toolbar />
         </header>
         <div className="App container">
-          <Route path="/" component={HomePage} exact />
-          <Route path="/category" component={CategoryPage} exact />
-
+          <Route path="/" render={() => <HomePage />}  exact />
+          <Route path="/category/:categoryId" render={(routeProps) => {
+            console.log({
+              routeProps
+            })
+          
+          return <CategoryPage category={routeProps.match.params.categoryId} />}} />
         </div>
-        <footer className="">
+        <footer class="mt-5"className="">
           <Footer />
         </footer>
       </Router>

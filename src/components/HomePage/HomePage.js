@@ -1,9 +1,14 @@
 import React from 'react';
 import './HomePage.css'
+import {categories} from '../../constant';
 
+import { Link } from 'react-router-dom'
 
+const HomePage = () => {
 
-const HomePage = props => (
+    console.log({ categories })
+
+    return (
     <>
     <div class="container">
         <div>
@@ -16,26 +21,33 @@ const HomePage = props => (
     </div>
     <div class="container">
     <div className="category">
-        
-        <div class="card ">
-            
+        {
+            categories.map((category, index) => (
+        <div class="card " key={index}>
+            <Link to={`/category/${category.title}`} className="link">
             <div class="card-body">
-                <h4 class="card-title">
-                    News
-                </h4>
-                <div class="card-text">
-                    Get news from verified sources... not Whatsapp University 2020
-                </div>
                 
+                    
+                    <h4 class="card-title">
+                        {category.title}
+                    </h4>
+                    
+                
+                <div class="card-text">
+                    {category.label} 
+                </div>
             </div>
+            </Link>
         </div>
+            ))
+        }
         
        
         </div>
     </div>
 
     <div class="container fb">
-        <h5>See the latest tweets from the WHO:</h5>
+        <h5>See the latest posts from the WHO:</h5>
         <iframe className="facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2FWHO%2F&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId"  scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
     </div>
 
@@ -48,5 +60,5 @@ const HomePage = props => (
     
     </>
 
-);
+);}
 export default HomePage;

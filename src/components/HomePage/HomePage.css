@@ -19,11 +19,24 @@ h4{
 }
 
 .card {
-    box-shadow: 0.5px 0.5px 0.5px 0.5px  grey;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px  coral;
     border-top: black;
     margin-bottom: 4em;
     
 }
+
+.link{
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: #FAF4F1;
+}
+
+.card-text {
+    color: black;
+}
+
 .fb{
     margin-bottom: 5em;
     text-align: center;
