@@ -23,7 +23,7 @@ const HomePage = () => {
     <div className="category">
         {
             categories.map((category, index) => (
-        <div class="card " key={index}>
+        <div class="card cat" key={index}>
             <Link to={`/category/${category.title}`} className="link">
             <div class="card-body">
                 
