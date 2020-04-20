@@ -7,3 +7,12 @@
     color: #333;
     text-align: center;
  }
+
+ .warn {
+     font-size: 0.9em;
+ }
+
+ .email {
+     font-weight: bold;
+     
+ }

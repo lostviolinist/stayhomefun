@@ -4,7 +4,7 @@ import './Footer.css'
 const Footer = props => (
     <>
         <div class="footer">
-            <p>All resources listed are crowd-sourced and not affiliated with us. For more enquiries please email: stayhomefun2020@gmail.com</p>
+            <p className="warn">All resources listed are crowd-sourced and not affiliated with us. For more enquiries please email: <span className="email">stayhomefun2020@gmail.com</span></p>
         </div>
     </>
 );

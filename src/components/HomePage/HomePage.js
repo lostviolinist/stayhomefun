@@ -48,7 +48,7 @@ const HomePage = () => {
 
     <div class="container fb">
         <h5>See the latest posts from the WHO:</h5>
-        <iframe className="facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2FWHO%2F&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId"  scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        <iframe className="facebook container" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2FWHO%2F&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId"  scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
     </div>
 
     <div class="container google">
