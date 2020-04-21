@@ -8,6 +8,7 @@ import './App.css';
 import Toolbar from './components/Toolbar/Toolbar'
 import HomePage from './components/HomePage/HomePage'
 import CategoryPage from './components/CategoryPage/CategoryPage'
+import ReactGA from 'react-ga';
 
 import Footer from './components/Footer/Footer'
 
@@ -48,8 +49,9 @@ isExact: true
 */
 
 class App extends Component {
-
-
+  
+  
+  
   render() {
     return (
       <Router>
