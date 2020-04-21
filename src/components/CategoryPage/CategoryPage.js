@@ -38,7 +38,7 @@ const CategoryPage = props => {
                         <div class="card-body">
                             <h5 class="card-title">{resource.title}</h5>
                             <p class="card-text">{resource.desc}</p>
-                            <a href={resource.link} class="btn" target="_blank">Take me there</a>
+                            <a href={resource.link} class="btn" rel="noopener noreferrer" target="_blank">Take me there</a>
                         </div>
                     </div>
                 </div>
